@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers | Philadelphia Prep Center | Client Success Stories</title>
+    <meta name="description" content="See how Philadelphia's top e-commerce brands trust us with their fulfillment. Case studies and testimonials.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+    
+    <style>
+        /* Customers Page Specific Styles */
+        .customer-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .customer-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-normal);
+        }
+        
+        .customer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .customer-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .customer-results {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--radius-md);
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--medium);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .industries-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 80px 0;
+            border-radius: var(--radius-xl);
+            margin: 80px 0;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .industry-item {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: transform var(--transition-fast);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .industry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .industry-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .customer-showcase,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .customer-results {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-overlay"></div>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div>
+                        <span class="logo-main">PHILADELPHIA</span>
+                        <span class="logo-sub">PREP CENTER</span>
+                    </div>
+                </a>
+                
+                <div class="nav-desktop">
+                    <ul class="nav-menu">
+                        <li class="nav-item dropdown">
+                            <a href="services.html" class="nav-link">
+                                <span>Services</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="container">
+                                    <div class="mega-menu-grid">
+                                        <div class="mega-menu-col">
+                                            <h4>Core Services</h4>
+                                            <ul>
+                                                <li><a href="services.html#fba-prep">Amazon FBA Prep</a></li>
+                                                <li><a href="services.html#dtc-fulfillment">DTC Fulfillment</a></li>
+                                                <li><a href="services.html#ecommerce">eCommerce</a></li>
+                                                <li><a href="services.html#b2b">B2B & Retail</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h4>Specialized</h4>
+                                            <ul>
+                                                <li><a href="services.html#cold-storage">Temperature Control</a></li>
+                                                <li><a href="services.html#freight">Freight Services</a></li>
+                                                <li><a href="services.html#omnichannel">Omnichannel</a></li>
+                                                <li><a href="services.html#returns">Returns</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h4>Support</h4>
+                                            <ul>
+                                                <li><a href="services.html#inventory">Inventory Management</a></li>
+                                                <li><a href="services.html#tracking">Order Tracking</a></li>
+                                                <li><a href="services.html#compliance">Compliance</a></li>
+                                                <li><a href="services.html#analytics">Analytics</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col cta-col">
+                                            <div class="mega-menu-cta">
+                                                <h4>Need Help?</h4>
+                                                <p>Get personalized fulfillment strategy</p>
+                                                <a href="contact.html" class="btn btn-secondary btn-small">
+                                                    <i class="fas fa-calendar-alt"></i> Book Call
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="customers.html" class="nav-link active">Customers</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="pricing.html" class="nav-link">Pricing</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About Us</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <a href="contact.html" class="btn btn-primary btn-small">
+                            <i class="fas fa-rocket"></i> Get Quote
+                        </a>
+                        <a href="tel:+12155550123" class="phone-link">
+                            <i class="fas fa-phone"></i> (215) 555-0123
+                        </a>
+                    </div>
+                </div>
+                
+                <button class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="services.html" class="nav-link">
+                    <span>Services</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="services.html#fba-prep">Amazon FBA Prep</a></li>
+                        <li><a href="services.html#dtc-fulfillment">DTC Fulfillment</a></li>
+                        <li><a href="services.html#omnichannel">Omnichannel</a></li>
+                        <li><a href="services.html#cold-storage">Temperature Control</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="customers.html" class="nav-link active">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        
+        <div class="nav-actions" style="margin-top: 30px;">
+            <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <i class="fas fa-rocket"></i> Get Started
+            </a>
+            <a href="tel:+12155550123" class="phone-link" style="display: block; text-align: center; margin-top: 15px;">
+                <i class="fas fa-phone"></i> (215) 555-0123
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Customers</h1>
+            <p class="lead">Trusted by Philadelphia's leading e-commerce brands for professional fulfillment</p>
+        </div>
+    </section>
+
+    <!-- Customer Showcase -->
+    <section id="case-studies" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">SUCCESS STORIES</span>
+                <h2>Philadelphia Brands We Serve</h2>
+                <p class="lead">See how local businesses scale with our fulfillment solutions</p>
+            </div>
+
+            <div class="customer-showcase">
+                <div class="customer-card reveal">
+                    <div class="customer-logo">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Philly Apparel Co.</h3>
+                    <p class="text-primary">Fashion & Apparel Brand</p>
+                    <p>Philadelphia-based clothing brand serving nationwide customers with premium streetwear.</p>
+                    
+                    <div class="customer-results">
+                        <div class="result-item">
+                            <div class="result-value">65%</div>
+                            <div class="result-label">Cost Reduction</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">2 Days</div>
+                            <div class="result-label">Faster Shipping</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-quote mt-2">
+                        <p><i>"Philadelphia Prep Center transformed our fulfillment from a bottleneck to a competitive advantage."</i></p>
+                        <p class="text-primary"><strong>— Sarah Johnson, CEO</strong></p>
+                    </div>
+                </div>
+
+                <div class="customer-card reveal delay-1">
+                    <div class="customer-logo">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Liberty Supplements</h3>
+                    <p class="text-primary">Health & Wellness</p>
+                    <p>Premium supplement brand requiring temperature-controlled storage and compliance management.</p>
+                    
+                    <div class="customer-results">
+                        <div class="result-item">
+                            <div class="result-value">99.9%</div>
+                            <div class="result-label">Accuracy Rate</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">48h</div>
+                            <div class="result-label">Order Processing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-quote mt-2">
+                        <p><i>"Their FDA compliance expertise gave us confidence to expand our product line nationally."</i></p>
+                        <p class="text-primary"><strong>— Michael Chen, Founder</strong></p>
+                    </div>
+                </div>
+
+                <div class="customer-card reveal delay-2">
+                    <div class="customer-logo">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Artisan Home Goods</h3>
+                    <p class="text-primary">Home & Decor</p>
+                    <p>Handcrafted home decor brand with complex packaging requirements and fragile items.</p>
+                    
+                    <div class="customer-results">
+                        <div class="result-item">
+                            <div class="result-value">0.1%</div>
+                            <div class="result-label">Damage Rate</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">40%</div>
+                            <div class="result-label">Shipping Savings</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-quote mt-2">
+                        <p><i>"Their care in handling our delicate products and custom packaging exceeded expectations."</i></p>
+                        <p class="text-primary"><strong>— David Wilson, Owner</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section global-network">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">TESTIMONIALS</span>
+                <h2>What Our Customers Say</h2>
+                <p class="lead">Real feedback from Philadelphia businesses we serve</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "Working with Philadelphia Prep Center has been transformative. Their 24-hour turnaround and 99.8% accuracy rate allowed us to scale our Amazon business without adding overhead. The team is responsive, professional, and truly understands e-commerce logistics."
+                        </p>
+                        <div class="author-info mt-3">
+                            <h4>Jessica Martinez</h4>
+                            <p class="text-primary">Operations Director, TechGadgets Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal delay-1">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "As a growing DTC brand, we needed a partner who could handle our seasonal spikes and complex kitting requirements. Philadelphia Prep Center not only met but exceeded our expectations. Their technology integration with our Shopify store is seamless."
+                        </p>
+                        <div class="author-info mt-3">
+                            <h4>Robert Kim</h4>
+                            <p class="text-primary">CEO, BrewCraft Co.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal delay-2">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "The compliance expertise at Philadelphia Prep Center saved us thousands in potential Amazon penalties. Their attention to detail in FBA prep and their proactive communication make them an invaluable partner for our multi-channel business."
+                        </p>
+                        <div class="author-info mt-3">
+                            <h4>Amanda Thompson</h4>
+                            <p class="text-primary">Founder, PureSkin Cosmetics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="industries-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">INDUSTRIES WE SERVE</span>
+                <h2>Philadelphia's Diverse Business Community</h2>
+                <p class="lead">Specialized fulfillment solutions for every industry</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-item reveal">
+                    <div class="industry-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h4>Fashion & Apparel</h4>
+                    <p>Garment handling, size sorting, custom packaging</p>
+                </div>
+
+                <div class="industry-item reveal delay-1">
+                    <div class="industry-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h4>Health & Beauty</h4>
+                    <p>FDA compliance, temperature control, serial tracking</p>
+                </div>
+
+                <div class="industry-item reveal delay-2">
+                    <div class="industry-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4>Electronics</h4>
+                    <p>Anti-static packaging, quality testing, compliance</p>
+                </div>
+
+                <div class="industry-item reveal delay-3">
+                    <div class="industry-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>Food & Beverage</h4>
+                    <p>Temperature control, expiration tracking, compliance</p>
+                </div>
+
+                <div class="industry-item reveal">
+                    <div class="industry-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4>Publishing</h4>
+                    <p>Book fulfillment, wholesale distribution, returns</p>
+                </div>
+
+                <div class="industry-item reveal delay-1">
+                    <div class="industry-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>Home & Hardware</h4>
+                    <p>Heavy item handling, palletizing, B2B fulfillment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Ready to Join Our Success Stories?</h2>
+                <p>Get the same professional fulfillment that Philadelphia's top brands trust</p>
+                
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i> Start Your Success Story
+                    </a>
+                    <a href="tel:+12155550123" class="btn btn-outline btn-large">
+                        <i class="fas fa-phone"></i> Call (215) 555-0123
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col main-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <span>PHILADELPHIA</span>
+                            <span>PREP CENTER</span>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Philadelphia's premier fulfillment and logistics partner. Specializing in Amazon FBA prep, 
+                        DTC fulfillment, and comprehensive shipping solutions for e-commerce businesses.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#fba-prep">Amazon FBA Prep</a></li>
+                        <li><a href="services.html#dtc-fulfillment">DTC Fulfillment</a></li>
+                        <li><a href="services.html#omnichannel">Omnichannel</a></li>
+                        <li><a href="services.html#cold-storage">Temperature Control</a></li>
+                        <li><a href="services.html#b2b">B2B & Retail</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="customers.html" class="active">Customers</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="customers.html#case-studies">Case Studies</a></li>
+                        <li><a href="customers.html#testimonials">Testimonials</a></li>
+                        <li><a href="contact.html">Get Quote</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>1234 Commerce Street<br>Philadelphia, PA 19107</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+12155550123">(215) 555-0123</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sales@philadelphiaprep.com">sales@philadelphiaprep.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8AM-6PM EST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2025 Philadelphia Prep Center. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/12155550123?text=Hi%20Philadelphia%20Prep%20Center%20team,%20I'm%20interested%20in%20your%20fulfillment%20services" 
+       target="_blank" 
+       class="whatsapp-float"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

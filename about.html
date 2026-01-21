@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Philadelphia Prep Center | Our Story & Mission</title>
+    <meta name="description" content="Learn about Philadelphia Prep Center - our story, mission, team, and commitment to Philadelphia's e-commerce community.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+    
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #0a2540 0%, #2d5a91 100%);
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .about-hero h1 {
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .about-hero .lead {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .story-section {
+            padding: 100px 0;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .story-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .milestone-list {
+            margin-top: 40px;
+        }
+        
+        .milestone {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .milestone:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .milestone-year {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .story-visual {
+            height: 500px;
+            background: linear-gradient(135deg, var(--light) 0%, #e0e0e0 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .story-visual i {
+            font-size: 4rem;
+            color: var(--primary);
+        }
+        
+        .values-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 100px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-normal);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.5rem;
+        }
+        
+        .team-section {
+            padding: 100px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-normal);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .team-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .team-info {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .team-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .team-title {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .team-bio {
+            color: var(--medium);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .facility-section {
+            background: linear-gradient(135deg, #0a2540 0%, #2d5a91 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .facility-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .facility-content h2,
+        .facility-content h3,
+        .facility-content .lead {
+            color: white;
+        }
+        
+        .facility-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .facility-stat {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .facility-visual {
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .facility-visual i {
+            font-size: 4rem;
+        }
+        
+        .commitment-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .commitment-item {
+            padding: 40px 30px;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .commitment-item i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 1024px) {
+            .story-content,
+            .facility-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .story-visual,
+            .facility-visual {
+                height: 300px;
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .values-grid,
+            .team-grid,
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .milestone {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .milestone-year {
+                margin: 0 auto;
+            }
+            
+            .facility-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-overlay"></div>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div>
+                        <span class="logo-main">PHILADELPHIA</span>
+                        <span class="logo-sub">PREP CENTER</span>
+                    </div>
+                </a>
+                
+                <div class="nav-desktop">
+                    <ul class="nav-menu">
+                        <li class="nav-item dropdown">
+                            <a href="services.html" class="nav-link">
+                                <span>Services</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="container">
+                                    <div class="mega-menu-grid">
+                                        <div class="mega-menu-col">
+                                            <h4>Core Services</h4>
+                                            <ul>
+                                                <li><a href="services.html#fba-prep">Amazon FBA Prep</a></li>
+                                                <li><a href="services.html#dtc-fulfillment">DTC Fulfillment</a></li>
+                                                <li><a href="services.html#ecommerce">eCommerce</a></li>
+                                                <li><a href="services.html#b2b">B2B & Retail</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h4>Specialized</h4>
+                                            <ul>
+                                                <li><a href="services.html#cold-storage">Temperature Control</a></li>
+                                                <li><a href="services.html#freight">Freight Services</a></li>
+                                                <li><a href="services.html#omnichannel">Omnichannel</a></li>
+                                                <li><a href="services.html#returns">Returns</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col">
+                                            <h4>Support</h4>
+                                            <ul>
+                                                <li><a href="services.html#inventory">Inventory Management</a></li>
+                                                <li><a href="services.html#tracking">Order Tracking</a></li>
+                                                <li><a href="services.html#compliance">Compliance</a></li>
+                                                <li><a href="services.html#analytics">Analytics</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-col cta-col">
+                                            <div class="mega-menu-cta">
+                                                <h4>Need Help?</h4>
+                                                <p>Get personalized fulfillment strategy</p>
+                                                <a href="contact.html" class="btn btn-secondary btn-small">
+                                                    <i class="fas fa-calendar-alt"></i> Book Call
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="customers.html" class="nav-link">Customers</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="pricing.html" class="nav-link">Pricing</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link active">About Us</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <a href="contact.html" class="btn btn-primary btn-small">
+                            <i class="fas fa-rocket"></i> Get Quote
+                        </a>
+                        <a href="tel:+12155550123" class="phone-link">
+                            <i class="fas fa-phone"></i> (215) 555-0123
+                        </a>
+                    </div>
+                </div>
+                
+                <button class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="services.html" class="nav-link">
+                    <span>Services</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="services.html#fba-prep">Amazon FBA Prep</a></li>
+                        <li><a href="services.html#dtc-fulfillment">DTC Fulfillment</a></li>
+                        <li><a href="services.html#omnichannel">Omnichannel</a></li>
+                        <li><a href="services.html#cold-storage">Temperature Control</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="customers.html" class="nav-link">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link active">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        
+        <div class="nav-actions" style="margin-top: 30px;">
+            <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <i class="fas fa-rocket"></i> Get Started
+            </a>
+            <a href="tel:+12155550123" class="phone-link" style="display: block; text-align: center; margin-top: 15px;">
+                <i class="fas fa-phone"></i> (215) 555-0123
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p class="lead">Born in Philadelphia, built for e-commerce. We're not just a fulfillment center - we're your logistics partner in growth.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text reveal">
+                    <span class="section-label">OUR JOURNEY</span>
+                    <h2>From Local Startup to Philadelphia's Premier Prep Center</h2>
+                    <p>Founded in 2018 by e-commerce entrepreneurs who faced the same logistics challenges you do, Philadelphia Prep Center was born out of necessity. We saw local businesses struggling with fulfillment bottlenecks, high costs, and complex Amazon requirements.</p>
+                    <p>What started as a small warehouse in North Philadelphia has grown into a state-of-the-art fulfillment center serving brands across the country. But our heart remains in Philadelphia - we're committed to supporting local businesses and contributing to our city's thriving e-commerce ecosystem.</p>
+                    
+                    <div class="milestone-list">
+                        <div class="milestone">
+                            <div class="milestone-year">2018</div>
+                            <div>
+                                <h4>Founded in Philadelphia</h4>
+                                <p>Started with a 5,000 sq ft warehouse and a mission to simplify e-commerce logistics</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-year">2020</div>
+                            <div>
+                                <h4>Expansion & Technology</h4>
+                                <p>Expanded to 20,000 sq ft and launched our proprietary fulfillment software</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-year">2023</div>
+                            <div>
+                                <h4>Industry Recognition</h4>
+                                <p>Named Philadelphia's Top-Rated Prep Center by the Chamber of Commerce</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-year">2025</div>
+                            <div>
+                                <h4>Current Operations</h4>
+                                <p>Serving 500+ brands with 50,000+ sq ft of modern fulfillment space</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-visual reveal">
+                    <i class="fas fa-history"></i>
+                    <div>
+                        <h3>Built on Experience</h3>
+                        <p>7+ years of e-commerce expertise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">OUR VALUES</span>
+                <h2>The Principles That Guide Us</h2>
+                <p class="lead">More than just a service - it's how we do business</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Precision & Accuracy</h3>
+                    <p>99.8% order accuracy isn't just a statistic - it's our standard. Every order receives meticulous attention to detail.</p>
+                </div>
+                
+                <div class="value-card reveal delay-1">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership</h3>
+                    <p>We view every client as a partner. Your success is our success, and we're invested in your growth.</p>
+                </div>
+                
+                <div class="value-card reveal delay-2">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Continuously improving our processes and technology to stay ahead of e-commerce trends.</p>
+                </div>
+                
+                <div class="value-card reveal delay-3">
+                    <div class="value-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Community Focus</h3>
+                    <p>Proudly Philadelphia-based. We're committed to supporting and growing local businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">OUR TEAM</span>
+                <h2>Meet Our Leadership</h2>
+                <p class="lead">Experienced professionals dedicated to your success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Michael Rodriguez</h4>
+                        <p class="team-title">CEO & Founder</p>
+                        <p class="team-bio">15+ years in e-commerce and logistics. Former Amazon Seller Central specialist.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal delay-1">
+                    <div class="team-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Sarah Johnson</h4>
+                        <p class="team-title">Operations Director</p>
+                        <p class="team-bio">Warehouse management expert with 12 years optimizing fulfillment operations.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal delay-2">
+                    <div class="team-image">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>David Wilson</h4>
+                        <p class="team-title">Client Success Manager</p>
+                        <p class="team-bio">Dedicated to ensuring every client receives exceptional service and support.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal delay-3">
+                    <div class="team-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Jennifer Chen</h4>
+                        <p class="team-title">Technology Director</p>
+                        <p class="team-bio">Leads our software development and integration teams for seamless operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Facility -->
+    <section class="facility-section">
+        <div class="container">
+            <div class="facility-content">
+                <div class="facility-text reveal">
+                    <span class="section-label">OUR FACILITY</span>
+                    <h2>State-of-the-Art Philadelphia Operations</h2>
+                    <p class="lead">Modern infrastructure designed for efficiency and scalability</p>
+                    
+                    <p>Our 50,000+ square foot facility in Philadelphia's commerce district is equipped with the latest fulfillment technology. From climate-controlled zones for sensitive products to dedicated Amazon FBA prep areas, every square foot is optimized for performance.</p>
+                    
+                    <div class="facility-stats">
+                        <div class="facility-stat">
+                            <div class="stat-number">50,000+</div>
+                            <div class="stat-label">Square Feet</div>
+                        </div>
+                        <div class="facility-stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Security Monitoring</div>
+                        </div>
+                        <div class="facility-stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Climate Controlled</div>
+                        </div>
+                        <div class="facility-stat">
+                            <div class="stat-number">99.8%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-visual reveal">
+                    <i class="fas fa-warehouse"></i>
+                    <div>
+                        <h3>Modern Infrastructure</h3>
+                        <p>Optimized for e-commerce fulfillment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Commitment -->
+    <section class="commitment-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">OUR COMMITMENT</span>
+                <h2>Why Choose Philadelphia Prep Center</h2>
+                <p class="lead">More than just fulfillment - a partnership for growth</p>
+            </div>
+            
+            <div class="commitment-grid">
+                <div class="commitment-item reveal">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Rapid Scaling</h4>
+                    <p>Infrastructure to support your growth from startup to enterprise</p>
+                </div>
+                
+                <div class="commitment-item reveal delay-1">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Compliance Expertise</h4>
+                    <p>Navigate Amazon requirements and industry regulations with confidence</p>
+                </div>
+                
+                <div class="commitment-item reveal delay-2">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Transparent Reporting</h4>
+                    <p>Real-time insights into your fulfillment performance and costs</p>
+                </div>
+                
+                <div class="commitment-item reveal delay-3">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Dedicated Support</h4>
+                    <p>Your dedicated account manager knows your business intimately</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Ready to Partner With Us?</h2>
+                <p>Join the Philadelphia brands who trust us with their fulfillment</p>
+                
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-handshake"></i> Start Partnership
+                    </a>
+                    <a href="contact.html#faq" class="btn btn-outline btn-large">
+                        <i class="fas fa-question-circle"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col main-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <span>PHILADELPHIA</span>
+                            <span>PREP CENTER</span>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Philadelphia's premier fulfillment and logistics partner. Specializing in Amazon FBA prep, 
+                        DTC fulfillment, and comprehensive shipping solutions for e-commerce businesses.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#fba-prep">Amazon FBA Prep</a></li>
+                        <li><a href="services.html#dtc-fulfillment">DTC Fulfillment</a></li>
+                        <li><a href="services.html#omnichannel">Omnichannel</a></li>
+                        <li><a href="services.html#cold-storage">Temperature Control</a></li>
+                        <li><a href="services.html#b2b">B2B & Retail</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html" class="active">About Us</a></li>
+                        <li><a href="customers.html">Customers</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html#story">Our Story</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                        <li><a href="about.html#facility">Our Facility</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>1234 Commerce Street<br>Philadelphia, PA 19107</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+12155550123">(215) 555-0123</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sales@philadelphiaprep.com">sales@philadelphiaprep.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8AM-6PM EST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2025 Philadelphia Prep Center. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/12155550123?text=Hi%20Philadelphia%20Prep%20Center%20team,%20I'm%20interested%20in%20your%20fulfillment%20services" 
+       target="_blank" 
+       class="whatsapp-float"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
